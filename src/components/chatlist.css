@@ -1,0 +1,156 @@
+.sidebar-content {
+  padding: 10px 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px 14px 22px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  color: white;
+}
+
+.sidebar-header h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.sidebar-new-btn {
+  background: #4169E1;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  font-size: 0.94rem;
+  cursor: pointer;
+  padding: 8px 18px;
+  border-radius: 10px;
+  transition: background 0.18s;
+}
+
+.sidebar-new-btn:hover {
+  background: #314DC3;
+}
+
+.chatlist-nav {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 0 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  scroll-behavior: smooth;
+}
+
+.chatlist-item {
+  background: rgba(255 255 255 / 0.1);
+  padding: 12px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px 0 rgba(21 26 106 / 0.5);
+  transition: background-color 0.25s ease, transform 0.15s ease;
+  outline: none;
+}
+
+.chatlist-item:hover,
+.chatlist-item:focus,
+.chatlist-item-active {
+  background: rgba(65, 105, 225, 0.8);
+  box-shadow: 0 0 12px 4px rgba(65, 105, 225, 0.75);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.chatlist-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.chatlist-subtitle {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  user-select: none;
+  margin-top: 2px;
+}
+.sidebar-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Fixed heading at the top */
+.sidebar-header-fixed {
+  position: sticky;
+  top: 0;
+  background: inherit;
+  padding: 18px 22px 12px 22px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  z-index: 2;
+  color: white;
+}
+
+/* Scroll area for chat items */
+.chatlist-nav-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  scroll-behavior: smooth;
+}
+
+/* Fixed "New Conversation" button at bottom */
+.sidebar-new-btn-fixed {
+  position: sticky;
+  bottom: 0;
+  width: 92%;
+  margin: 12px 4%;
+  background: #4169E1;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 12px 0;
+  border-radius: 12px;
+  transition: background 0.18s;
+  z-index: 2;
+  box-shadow: 0 2px 10px #3740a155;
+  letter-spacing: 0.01em;
+}
+
+.sidebar-new-btn-fixed:hover {
+  background: #314DC3;
+}
+/* Hide side scrollbar but allow scrolling */
+.chatlist-nav-scroll {
+  scrollbar-width: none;         /* Firefox */
+  -ms-overflow-style: none;      /* IE and Edge */
+}
+
+.chatlist-nav-scroll::-webkit-scrollbar {
+  display: none;                 /* Chrome, Safari and Opera */
+}
+
+/* Use black in light theme, white in dark theme */
+.sidebar-header-fixed, .chatlist-title, .chatlist-subtitle {
+  color: #161c2d; /* Fallback: dark blue/black */
+}
+
+/* Support for dark theme, override with .dark-theme */
+.dark-theme .sidebar-header-fixed,
+.dark-theme .chatlist-title,
+.dark-theme .chatlist-subtitle {
+  color: #fff;
+}

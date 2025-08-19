@@ -1,0 +1,516 @@
+/* Root container */
+.app-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui, sans-serif;
+}
+
+.app-title {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--text-color);
+}
+
+/* Mobile menu btn */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* Responsive hamburger display */
+@media (max-width: 1000px) {
+  .mobile-menu-btn {
+    display: flex;
+  }
+}
+
+.menu-bar {
+  width: 23px;
+  height: 3px;
+  background: var(--menu-bar-bg);
+  border-radius: 3px;
+}
+
+
+/* Header right controls */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+
+.signout-btn {
+  padding: 8px 18px;
+  background: #ff5e5e;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.signout-btn:hover {
+  background: #e94949;
+}
+
+/* Main layout */
+.app-main {
+  flex: 1;
+  display: flex;
+  height: calc(100vh - 64px);
+}
+
+
+
+@media (max-width: 1000px) {
+  .sidebar {
+    position: fixed;
+    top: 64px;
+    left: -340px;
+    height: calc(100vh - 64px);
+    box-shadow: 8px 0 30px rgba(23, 33, 80, 0.2);
+    border-radius: 0 24px 24px 0;
+    z-index: 90;
+    background: var(--sidebar-bg);
+  }
+  .sidebar.sidebar-open {
+    left: 0;
+  }
+}
+
+/* Main chat window container */
+.chat-window-wrapper {
+  flex: 1;
+  background-color: var(--bg-color);
+  border-radius: 0 24px 24px 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.app-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui, sans-serif;
+}
+
+.dark-theme {
+  --bg-color: #121226;
+  --text-color: #e0e3f7;
+  --header-bg: #1f223d;
+  --sidebar-bg: linear-gradient(140deg, #222050 65%, #4440c4 100%);
+  --button-bg: #3e83ff;
+  --button-bg-hover: #5a9bff;
+  --menu-bar-bg: #91a9ff;
+}
+
+.light-theme {
+  --bg-color: #fafafa;
+  --text-color: #222;
+  --header-bg: #e0e0e0;
+  --sidebar-bg: #ececf6;
+  --button-bg: #3e63ff;
+  --button-bg-hover: #5a9bff;
+  --menu-bar-bg: #3e63ff;
+}
+
+.app-container {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Header */
+.app-header {
+  background-color: var(--header-bg);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1000;
+}
+
+.menu-bar {
+  width: 26px;
+  height: 3px;
+  background: var(--menu-bar-bg);
+  border-radius: 3px;
+}
+
+
+/* Header right controls */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+
+.header-pill.active,
+.header-pill:active,
+.header-pill:focus {
+  background: #487fff;
+  color: #fff;
+}
+
+/* Sidebar styles & responsiveness */
+.sidebar {
+  width: 320px;
+  background: var(--sidebar-bg);
+  border-radius: 0 0 0 24px;
+  box-shadow: inset 5px 0 8px rgba(255, 255, 255, 0.1);
+  overflow-y: auto;
+  transition: left 0.25s ease;
+  position: relative;
+  z-index: 90;
+}
+
+.sidebar.sidebar-open {
+  left: 0;
+}
+
+@media (max-width: 1000px) {
+  .sidebar {
+    position: fixed;
+    top: 64px;
+    left: -340px;
+    height: calc(100vh - 64px);
+    box-shadow: 8px 0 30px rgba(23, 33, 80, 0.2);
+    border-radius: 0 24px 24px 0;
+    z-index: 90;
+    background: var(--sidebar-bg);
+  }
+  .sidebar.sidebar-open {
+    left: 0;
+  }
+}
+
+/* Main chat window container */
+.chat-window-wrapper {
+  background-color: var(--bg-color);
+  border-radius: 0 24px 24px 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+/* Spinner container centered and full screen */
+.loading-spinner-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Spinner styling */
+.loading-spinner {
+  border: 12px solid rgba(0, 0, 0, 0.1);
+  border-top: 12px solid #4169e1;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+}
+
+/* Responsive spinner sizing */
+@media (max-width: 600px) {
+  .loading-spinner {
+    width: 60px;
+    height: 60px;
+    border-width: 8px;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ensure full page usage */
+html, body, #root, .app-container {
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0;
+  padding: 0;
+  background: var(--bg-color);
+  overflow: hidden;
+}
+
+/* Container holding title + burger */
+.header-title-stack {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* On very small devices, stack vertically */
+@media (max-width: 500px) {
+  .header-title-stack {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+  .app-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Pills styling */
+.header-pill {
+  display: flex;
+  align-items: center;
+  background: #ececf6;
+  color: #24234a;
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  margin: 0 2px;
+  transition: background 0.18s, color 0.18s;
+  cursor: pointer;
+  box-shadow: 0 1px 4px #bbc3fa22;
+  white-space: nowrap; /* Prevent wrapping */
+  min-width: 0;
+  min-height: 0;
+}
+
+.signout-pill {
+  display: flex;
+  align-items: center;
+  
+}
+
+.signout-pill .material-icons {
+  font-size: 17px !important;
+  margin-right: 5px;
+}
+
+.signout-pill:hover {
+  background: #e05858;
+  color: #fff;
+}
+
+/* Responsive adjustments for very small screens */
+@media (max-width: 500px) {
+  .signout-pill {
+    padding: 10px 8px;
+    font-size: 0.8rem;
+    max-width: 95px;
+  }
+  .header-pill {
+    padding: 1px;
+    margin-top: 20px;
+    
+  }
+}
+
+/* Online pill */
+.online-pill {
+  background: #e6fae6;
+  color: #28b12a;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: default;
+  font-size: 1rem;
+}
+
+.dark-theme .online-pill {
+  background: #17391a;
+  color: #b5ffb0;
+}
+
+.online-dot {
+  width: 10px;
+  height: 10px;
+  background: #28b12a;
+  border-radius: 999px;
+  box-shadow: 0 0 4px 0 #28b12a55;
+  display: inline-block;
+}
+
+.dark-theme .online-dot {
+  background: #5cff50;
+}
+.app-header {
+  background-color: var(--header-bg);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  min-width: 0;
+}
+
+/* Left side: hamburger + title, perfectly aligned */
+.header-left {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  flex-shrink: 1;
+}
+
+/* AI Chatbot: Don’t cut underflow, handle overflow with ellipsis */
+.app-title {
+  font-weight: 700;
+  font-size: 1.22rem;
+  color: var(--text-color);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 29vw;
+  line-height: 1.1;
+  margin: 0;
+}
+
+
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+}
+
+/* Pills stay in one row; Sign Out never wraps */
+.header-pill {
+  display: flex;
+  align-items: center;
+  background: #ececf6;
+  color: #24234a;
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 8px 12px;
+  box-shadow: 0 1px 4px #bbc3fa22;
+  white-space: nowrap;
+  min-width: 0;
+  min-height: 0;
+}
+
+.signout-pill {
+  background: #fff0f0;
+  color: #d32f2f;
+  font-weight: 700;
+  white-space: nowrap;
+  font-size: 0.97rem;
+  padding: 8px 8px;
+  gap: 5px;
+}
+
+.signout-pill .material-icons {
+  font-size: 17px !important;
+  margin-right: 5px;
+}
+
+/* Responsive: shrink title and hide text as needed on small screens */
+@media (max-width: 600px) {
+  .app-title {
+    font-size: 1.03rem;
+    max-width: 22vw;
+  }
+  .signout-pill {
+    padding: 7px 5px;
+    font-size: 0.89rem;
+    max-width: 60px;
+  }
+}
+
+@media (max-width: 400px) {
+  .app-title {
+    max-width: 20vw;
+    font-size: 0.92rem;
+  }
+  .signout-pill span:not(.material-icons) {
+    display: none;
+  }
+}
+
+/* Make header sticky if desired */
+.app-header {
+ position: sticky;
+  top: 0;
+  z-index: 200; 
+}
+
+.signout-pill {
+  
+  max-width: 160px;   /* or remove this line */
+  overflow: visible;
+  text-overflow: unset;
+}
+@media (max-width: 600px) {
+  .signout-pill {
+    max-width: 120px; /* Enough for "LOGOUT" */
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    display: flex !important; /* Or whatever your default is */
+  }
+}
+/* Add margin or padding to body/content below header */
+.main-content {
+  padding-top: 60px; /* Adjust to header height */
+}
+@media (max-width: 768px) {
+  .chat-list, .chat-window {
+    height: calc(100vh - 60px); /* Full viewport height minus header */
+    overflow-y: auto; /* Enable vertical scroll */
+  }
+}
+
+.app-main {
+  padding-top: 3px; /* header height */
+}
+html, body, #root, .app-container {
+  overflow-y: auto;
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  top: 0;
+}
+
+.chat-window-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.app-header{
+  padding-top: 20px;
+}
