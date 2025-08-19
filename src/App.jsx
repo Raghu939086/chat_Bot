@@ -4,7 +4,7 @@ import AuthForm from "./components/AuthForm";
 import ChatList from "./components/ChatList";
 import ChatWindow from "./components/ChatWindow";
 import { apollo } from "./apollo";
-import "./app.css";
+import "./App.css";
 
 export default function App() {
   const { isAuthenticated, isLoading, user } = useAuthenticationStatus();
