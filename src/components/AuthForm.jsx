@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { nhost } from '../nhost';
-import './Authform.css';
+import './AuthForm.css';
 
 export default function AuthForm() {
   const [mode, setMode] = useState('sign-in');
